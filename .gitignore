@@ -1,0 +1,10 @@
+# Ignore everything in the project root by default.
+/*
+
+# Include these files and directories.
+!/.gitignore
+!/bash
+!/kitty
+!/nvim
+!/vim
+

@@ -1,0 +1,78 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" SETTINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible
+
+filetype plugin on
+filetype indent on
+
+syntax on
+
+set rnu
+set colorcolumn=80
+set termguicolors
+color catppuccin_frappe
+
+set nowrap
+set autoindent
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+
+set ignorecase
+set smartcase
+
+set timeoutlen=200
+set noerrorbells
+set novisualbell
+set t_vb=
+
+set clipboard^=unnamedplus,unnamed
+
+set nobackup
+set undofile
+set undodir="$HOME/.config/vim/undodir"
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPPINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let mapleader=" "
+
+inoremap jj <ESC>
+
+nnoremap n  nzzzv
+nnoremap N  Nzzzv
+nmap <C-d>  <C-d>zz
+nmap <C-u>  <C-u>zz
+
+nnoremap <leader>o :so "$MYVIMRC"<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" AUTOCOMMANDS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+augroup C_Commands
+    au!
+    au BufEnter *.c setlocal cindent
+    au BufEnter *.c nnoremap <leader>b :make<CR>
+    au BufEnter *.c nnoremap <leader>t :make test<CR>
+augroup END
+
+augroup TSV_Commands
+    au!
+    au BufEnter *.tsv setlocal list
+augroup END
+
+augroup GitCommit
+    au!
+    au FileType GitCommit setlocal spell tw=72
+augroup END
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGIN SETTINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:highlightedyank_highlight_duration = 200
+
