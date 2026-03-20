@@ -67,7 +67,7 @@ augroup TSV_Commands
     au BufEnter *.tsv setlocal list
 augroup END
 
-augroup GitCommit
+augroup Git_Commit
     au!
     au FileType gitcommit setlocal spell tw=72
 augroup END
