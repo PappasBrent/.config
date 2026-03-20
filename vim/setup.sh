@@ -8,6 +8,7 @@ URLS=(
     https://github.com/machakann/vim-highlightedyank
     https://github.com/lewis6991/gitsigns.nvim
     https://github.com/tpope/vim-fugitive
+    https://github.com/tpope/vim-commentary
 )
 
 upgrade=false
