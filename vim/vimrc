@@ -23,6 +23,8 @@ set shiftwidth=4
 set ignorecase
 set smartcase
 
+" Decrease updatetime so that gitgutter updates faster
+set updatetime=100
 set timeoutlen=200
 set noerrorbells
 set novisualbell
