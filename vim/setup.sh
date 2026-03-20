@@ -3,12 +3,12 @@
 set -eu
 
 URLS=(
-    https://github.com/catppuccin/vim
-    https://github.com/tpope/vim-surround
-    https://github.com/machakann/vim-highlightedyank
     https://github.com/airblade/vim-gitgutter
-    https://github.com/tpope/vim-fugitive
+    https://github.com/catppuccin/vim
+    https://github.com/machakann/vim-highlightedyank
     https://github.com/tpope/vim-commentary
+    https://github.com/tpope/vim-fugitive
+    https://github.com/tpope/vim-surround
 )
 
 upgrade=false
