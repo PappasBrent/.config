@@ -6,7 +6,7 @@ URLS=(
     https://github.com/catppuccin/vim
     https://github.com/tpope/vim-surround
     https://github.com/machakann/vim-highlightedyank
-    https://github.com/lewis6991/gitsigns.nvim
+    https://github.com/airblade/vim-gitgutter
     https://github.com/tpope/vim-fugitive
     https://github.com/tpope/vim-commentary
 )
