@@ -69,7 +69,7 @@ augroup END
 
 augroup GitCommit
     au!
-    au FileType GitCommit setlocal spell tw=72
+    au FileType gitcommit setlocal spell tw=72
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
