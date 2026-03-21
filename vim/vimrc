@@ -80,8 +80,8 @@ nnoremap <leader>o :so $MYVIMRC<CR>
 augroup C_Commands
     au!
     au BufEnter *.c setlocal cindent
-    au BufEnter *.c nnoremap <leader>b :make<CR>
-    au BufEnter *.c nnoremap <leader>t :make test<CR>
+    au FileType c nnoremap <localleader>b :make<CR>
+    au FileType c nnoremap <localleader>t :make test<CR>
 augroup END
 
 augroup TSV_Commands
