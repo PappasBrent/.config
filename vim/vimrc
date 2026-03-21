@@ -41,6 +41,7 @@ set undodir="$HOME/.config/vim/undodir"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader=" "
+let maplocalleader=" "
 
 " Quickly escape normal mode.
 inoremap jj <ESC>
