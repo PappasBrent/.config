@@ -93,6 +93,11 @@ augroup Git_Commit
     au FileType gitcommit setlocal spell tw=72
 augroup END
 
+augroup Spelling
+    au!
+    au BufEnter *.txt *.md *.typ *.tex setlocal spell
+augroup END
+
 " Return to last edit position when opening files.
 augroup VimStart
     au!
