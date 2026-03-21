@@ -25,7 +25,7 @@ set smartcase
 
 " Decrease updatetime so that gitgutter updates faster
 set updatetime=100
-set timeoutlen=200
+set timeoutlen=400
 set noerrorbells
 set novisualbell
 set t_vb=
