@@ -99,7 +99,7 @@ augroup Spelling
 augroup END
 
 " Return to last edit position when opening files.
-augroup VimStart
+augroup Vim_Start
     au!
     " Taken from default.vim.
     "
