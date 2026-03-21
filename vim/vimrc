@@ -42,8 +42,10 @@ set undodir="$HOME/.config/vim/undodir"
 
 let mapleader=" "
 
+" Quickly escape normal mode.
 inoremap jj <ESC>
 
+" Recenter after selecting next search result and paging up or down.
 nnoremap n  nzzzv
 nnoremap N  Nzzzv
 nmap <C-d>  <C-d>zz
