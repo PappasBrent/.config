@@ -9,6 +9,7 @@ URLS=(
     https://github.com/tpope/vim-commentary
     https://github.com/tpope/vim-fugitive
     https://github.com/tpope/vim-surround
+    https://github.com/JMcKiern/vim-venter
 )
 
 upgrade=false
