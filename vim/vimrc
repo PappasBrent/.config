@@ -51,7 +51,26 @@ nnoremap N  Nzzzv
 nmap <C-d>  <C-d>zz
 nmap <C-u>  <C-u>zz
 
-nnoremap <leader>o :so "$MYVIMRC"<CR>
+" Move lines around.
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" Better indenting in visual mode.
+vnoremap < <gv
+vnoremap > >gv
+
+" Buffer navigation.
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprevious<CR>
+
+" Join lines and keep cursor position
+nnoremap J mzJ`z
+
+" Quickly edit and source vimrc.
+nnoremap <leader>rc :e $MYVIMRC<CR>
+nnoremap <leader>o :so $MYVIMRC<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS
