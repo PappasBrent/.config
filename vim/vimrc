@@ -118,3 +118,4 @@ augroup END
 
 let g:highlightedyank_highlight_duration = 200
 
+nnoremap <leader>v :VenterToggle<CR>
