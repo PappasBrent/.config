@@ -30,6 +30,9 @@ set noerrorbells
 set novisualbell
 set t_vb=
 
+" Enable seeing the search count and index in the bottom right.
+set shortmess-=S
+
 set clipboard^=unnamedplus,unnamed
 
 set nobackup
