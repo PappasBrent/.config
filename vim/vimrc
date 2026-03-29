@@ -97,6 +97,13 @@ augroup Git_Commit
     au FileType gitcommit setlocal spell tw=72
 augroup END
 
+augroup MD_Commands
+    au!
+    if executable('prettier')
+        au FileType markdown nnoremap <localleader>t vip:!prettier --parser markdown<CR>
+    endif
+augroup END
+
 augroup Spelling
     au!
     au BufEnter *.txt,*.md,*.typ,*.tex setlocal spell
