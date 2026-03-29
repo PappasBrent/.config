@@ -76,6 +76,9 @@ nnoremap J mzJ`z
 nnoremap <leader>rc :e $MYVIMRC<CR>
 nnoremap <leader>o :so $MYVIMRC<CR>
 
+" Quickly rewrap text.
+nnoremap <A-q> gwap
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
