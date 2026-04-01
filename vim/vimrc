@@ -37,7 +37,14 @@ set clipboard^=unnamedplus,unnamed
 
 set nobackup
 set undofile
-set undodir="$HOME/.config/vim/undodir"
+let &undodir=expand("$HOME/.config/vim/undodir")
+
+" Create undodir if it does not exist
+if ! isdirectory(&undodir)
+    if exists("*mkdir")
+        call mkdir(&undodir, "p")
+    endif
+endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
