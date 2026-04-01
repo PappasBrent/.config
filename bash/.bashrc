@@ -141,3 +141,8 @@ if command -v gsettings >/dev/null 2>&1 \
     gsettings set org.gnome.mutter center-new-windows true
 fi
 
+# Create a link for fd-find
+if command -v fdfind >/dev/null 2>&1; then
+    ln -sf $(which fdfind) "$HOME/.local/bin/fd"
+fi
+
