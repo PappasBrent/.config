@@ -146,3 +146,4 @@ if command -v fdfind >/dev/null 2>&1; then
     ln -sf $(which fdfind) "$HOME/.local/bin/fd"
 fi
 
+function splitlines() { for word in "$@"; do echo "$word"; done }
