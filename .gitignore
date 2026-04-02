@@ -1,6 +1,9 @@
 # Ignore everything in the project root by default.
 /*
 
+# Ignore swap files
+*.swp
+
 # Include these files and directories.
 !/.gitignore
 !/README.md
