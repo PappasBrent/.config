@@ -157,6 +157,8 @@ augroup END
 " PLUGIN SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" vim-highlightedyank
 let g:highlightedyank_highlight_duration = 200
 
+" Venter
 nnoremap <leader>v :VenterToggle<CR>
