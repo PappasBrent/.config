@@ -86,6 +86,9 @@ nnoremap <leader>o :so $MYVIMRC<CR>
 " Quickly rewrap text.
 nnoremap <A-q> gwap
 
+" Yank until end of line
+nnoremap Y y$
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
