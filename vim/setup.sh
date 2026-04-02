@@ -12,6 +12,13 @@ URLS=(
     https://github.com/JMcKiern/vim-venter
 )
 
+if >/dev/null command -v fzf; then
+    URLS+=(
+    'https://github.com/junegunn/fzf'
+    'https://github.com/junegunn/fzf.vim'
+)
+fi
+
 upgrade=false
 if getopts 'u' option; then upgrade=true; fi
 
