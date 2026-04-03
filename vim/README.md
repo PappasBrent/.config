@@ -8,5 +8,4 @@
 
 - Python3
 
-
 - [FZF](https://github.com/junegunn/fzf)
