@@ -12,6 +12,8 @@ function install_ycm() {
     fi
 }
 
+function generate_helptags() { vim -c 'silent! helptags ALL | exit'; }
+
 declare -A URL_to_post_install_hook=(
     https://github.com/airblade/vim-gitgutter           :
     https://github.com/catppuccin/vim                   :
@@ -20,7 +22,7 @@ declare -A URL_to_post_install_hook=(
     https://github.com/tpope/vim-fugitive               :
     https://github.com/tpope/vim-surround               :
     https://github.com/JMcKiern/vim-venter              :
-    https://github.com/dense-analysis/ale               :
+    https://github.com/dense-analysis/ale               generate_helptags
     https://github.com/ycm-core/YouCompleteMe.git       install_ycm
 )
 
