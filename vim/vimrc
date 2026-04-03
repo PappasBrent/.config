@@ -35,6 +35,9 @@ set shortmess-=S
 
 set clipboard^=unnamedplus,unnamed
 
+# Show additional info about completions in a popup menu.
+set completeopt+=popup
+
 set nobackup
 set undofile
 let &undodir=expand("$HOME/.config/vim/undodir")
