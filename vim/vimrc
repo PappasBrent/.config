@@ -167,3 +167,6 @@ nnoremap <leader>v :VenterToggle<CR>
 nnoremap <leader>fg :GFiles<CR>
 nnoremap <leader>? :GFiles?<CR>
 nnoremap <leader>rg :Rg<CR>
+
+" YouCompleteMe
+nnoremap <leader>jd :YcmCompleter GoTo<CR>
