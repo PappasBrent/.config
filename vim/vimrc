@@ -185,5 +185,5 @@ augroup ALE
     au!
     autocmd FileType ale-preview setlocal wrap
     autocmd FileType c let g:ale_c_clangtidy_extra_options='-clang-analyzer-security.insecureAPI.strcpy'
-    autocmd BufEnter *.tsv execute 'unlet g:ale_fixers["*"]'
+    autocmd BufEnter *.tsv execute 'if has_key(g:ale_fixers, "*") | unlet g:ale_fixers["*"] | endif'
 augroup END
