@@ -106,7 +106,6 @@ augroup END
 augroup TSV_Commands
     au!
     au BufEnter *.tsv setlocal list noexpandtab softtabstop=8 shiftwidth=8 listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
-    au BufEnter *.tsv execute 'unlet g:ale_fixers["*"]'
 augroup END
 
 augroup Bash_Commands
@@ -182,4 +181,5 @@ augroup ALE
     au!
     autocmd FileType ale-preview setlocal wrap
     autocmd FileType c let g:ale_c_clangtidy_extra_options='-clang-analyzer-security.insecureAPI.strcpy'
+    autocmd BufEnter *.tsv execute 'unlet g:ale_fixers["*"]'
 augroup END
