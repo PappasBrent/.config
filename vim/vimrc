@@ -35,7 +35,7 @@ set shortmess-=S
 
 set clipboard^=unnamedplus,unnamed
 
-# Show additional info about completions in a popup menu.
+" Show additional info about completions in a popup menu.
 set completeopt+=popup
 
 set nobackup
