@@ -171,6 +171,10 @@ nnoremap <leader>fg :GFiles<CR>
 nnoremap <leader>? :GFiles?<CR>
 nnoremap <leader>rg :Rg<CR>
 
+" Fugitive
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gp :Git push<CR>
+
 " YouCompleteMe
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
 
