@@ -99,8 +99,8 @@ nnoremap Y y$
 augroup C_Commands
     au!
     au BufEnter *.c setlocal cindent
-    au FileType c nnoremap <localleader>m :execute "silent !clear" <bar> make!<CR>
-    au FileType c nnoremap <localleader>t :execute "silent !clear" <bar> make! test<CR>
+    au FileType c nnoremap <localleader>m :write <bar> :execute "silent !clear" <bar> make!<CR>
+    au FileType c nnoremap <localleader>t :write <bar> :execute "silent !clear" <bar> make! test<CR>
 augroup END
 
 augroup TSV_Commands
@@ -110,12 +110,12 @@ augroup END
 
 augroup Bash_Commands
     au!
-    au FileType sh nnoremap <localleader>m :!clear && ./%<CR>
+    au FileType sh nnoremap <localleader>m :write <bar> :!clear && ./%<CR>
 augroup END
 
 augroup Python_Commands
     au!
-    au FileType python nnoremap <localleader>m :!clear && ./%<CR>
+    au FileType python nnoremap <localleader>m :write <bar> :!clear && ./%<CR>
 augroup END
 
 augroup Git_Commit
