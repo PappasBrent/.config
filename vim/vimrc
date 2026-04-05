@@ -110,12 +110,12 @@ augroup END
 
 augroup Bash_Commands
     au!
-    au FileType sh nnoremap <localleader>r :!clear && ./%<CR>
+    au FileType sh nnoremap <localleader>m :!clear && ./%<CR>
 augroup END
 
 augroup Python_Commands
     au!
-    au FileType python nnoremap <localleader>r :!clear && ./%<CR>
+    au FileType python nnoremap <localleader>m :!clear && ./%<CR>
 augroup END
 
 augroup Git_Commit
