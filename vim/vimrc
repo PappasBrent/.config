@@ -99,8 +99,8 @@ nnoremap Y y$
 augroup C_Commands
     au!
     au BufEnter *.c setlocal cindent
-    au FileType c nnoremap <localleader>r :make!<CR>
-    au FileType c nnoremap <localleader>t :make! test<CR>
+    au FileType c nnoremap <localleader>r :execute "silent !clear" <bar> make!<CR>
+    au FileType c nnoremap <localleader>t :execute "silent !clear" <bar> make! test<CR>
 augroup END
 
 augroup TSV_Commands
