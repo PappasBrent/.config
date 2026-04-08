@@ -6,7 +6,7 @@
 
 ## Optional
 
-- Python3
+- Python3 for YouCompleteMe
 
 ## Notes
 
