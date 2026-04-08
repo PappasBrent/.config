@@ -1,4 +1,4 @@
-# Vim configruration
+# Vim configuration
 
 ## Requirements
 
