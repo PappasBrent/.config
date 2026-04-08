@@ -5,6 +5,11 @@ augroup C_Commands
     au FileType c nnoremap <localleader>t :write <bar> :execute "silent !clear" <bar> make! test<CR>
 augroup END
 
+augroup Tex_Commands
+    au!
+    au FileType tex setlocal wrap
+augroup END
+
 augroup TSV_Commands
     au!
     au BufEnter *.tsv setlocal list noexpandtab softtabstop=8 shiftwidth=8 listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
