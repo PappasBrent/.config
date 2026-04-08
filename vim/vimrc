@@ -38,6 +38,7 @@ endif
 
 " Setup Vim plugins and configure each of them with autocommands.
 " See https://junegunn.github.io/vim-plug/faq/
+if filereadable(plug_file)
 call plug#begin()
 
 Plug 'JMcKiern/vim-venter'
@@ -82,3 +83,4 @@ if executable('python3')
 endif
 
 call plug#end()
+endif
