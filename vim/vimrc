@@ -2,163 +2,26 @@
 " SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set nocompatible
-
-filetype plugin on
-filetype indent on
-
-syntax on
-
-set rnu
-set colorcolumn=80
-set termguicolors
-color catppuccin_frappe
-
-set nowrap
-set autoindent
-set expandtab
-set softtabstop=4
-set shiftwidth=4
-
-set ignorecase
-set smartcase
-
-" Decrease updatetime so that gitgutter updates faster
-set updatetime=100
-set timeoutlen=400
-set noerrorbells
-set novisualbell
-set t_vb=
-
-" Enable seeing the search count and index in the bottom right.
-set shortmess-=S
-
-set clipboard^=unnamedplus,unnamed
-
-" Show additional info about completions in a popup menu.
-set completeopt+=popup
-
-set nobackup
-set undofile
-let &undodir=expand("$HOME/.config/vim/undodir")
-
-" Create undodir if it does not exist
-if ! isdirectory(&undodir)
-    if exists("*mkdir")
-        call mkdir(&undodir, "p")
-    endif
-endif
+exec 'source ' . expand('<sfile>:p:h') . '/settings.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader=" "
-let maplocalleader=" "
-
-" Quickly escape normal mode.
-inoremap jj <ESC>
-
-" Recenter after selecting next search result and paging up or down.
-nnoremap n  nzzzv
-nnoremap N  Nzzzv
-nnoremap <C-d>  <C-d>zz
-nnoremap <C-u>  <C-u>zz
-
-" Move lines around.
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
-" Better indenting in visual mode.
-vnoremap < <gv
-vnoremap > >gv
-
-" Buffer navigation.
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprevious<CR>
-
-" Join lines and keep cursor position
-nnoremap J mzJ`z
-
-" Quickly edit and source vimrc.
-nnoremap <leader>rc :e $MYVIMRC<CR>
-nnoremap <leader>o :so $MYVIMRC<CR>
-
-" Quickly rewrap text.
-nnoremap <A-q> gwap
-
-" Yank until end of line
-nnoremap Y y$
+exec 'source ' . expand('<sfile>:p:h') . '/mappings.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " AUTOCOMMANDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-augroup C_Commands
-    au!
-    au BufEnter *.c setlocal cindent
-    au FileType c nnoremap <localleader>m :write <bar> :execute "silent !clear" <bar> make!<CR>
-    au FileType c nnoremap <localleader>t :write <bar> :execute "silent !clear" <bar> make! test<CR>
-augroup END
-
-augroup TSV_Commands
-    au!
-    au BufEnter *.tsv setlocal list noexpandtab softtabstop=8 shiftwidth=8 listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
-augroup END
-
-augroup Bash_Commands
-    au!
-    au FileType sh nnoremap <localleader>m :write <bar> :!clear && ./%<CR>
-augroup END
-
-augroup Python_Commands
-    au!
-    au FileType python nnoremap <localleader>m :write <bar> :!clear && ./%<CR>
-augroup END
-
-augroup Git_Commit
-    au!
-    au FileType gitcommit setlocal spell tw=72
-augroup END
-
-augroup MD_Commands
-    au!
-    if executable('prettier')
-        au FileType markdown nnoremap <localleader>t vip:!prettier --parser markdown<CR>
-    endif
-augroup END
-
-augroup Spelling
-    au!
-    au BufEnter *.txt,*.md,*.typ,*.tex setlocal spell
-augroup END
-
-" Return to last edit position when opening files.
-augroup Vim_Start
-    au!
-    " Taken from default.vim.
-    "
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid, when inside an event handler
-    " (happens when dropping a file on gvim), for a commit or rebase message
-    " (likely a different one than last time), and when using xxd(1) to filter
-    " and edit binary files (it transforms input files back and forth, causing
-    " them to have dual nature, so to speak). For commit messages, jump two
-    " lines down because that's where the title is in the commit template I use.
-    autocmd BufReadPost *
-                \ if &filetype == 'gitcommit' | execute "normal gg2j" | endif
-                \ | let line = line("'\"")
-                \ | if line >= 1 && line <= line("$") && &filetype !~# 'commit'
-                \      && index(['xxd', 'gitrebase'], &filetype) == -1
-                \ |   execute "normal! g`\"zz"
-                \ | endif
-augroup END
+exec 'source ' . expand('<sfile>:p:h') . '/autocommands.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGIN SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" catppuccin
+color catppuccin_frappe
 
 " vim-highlightedyank
 let g:highlightedyank_highlight_duration = 200
