@@ -20,33 +20,65 @@ exec 'source ' . expand('<sfile>:p:h') . '/autocommands.vim'
 " PLUGIN SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" catppuccin
-color catppuccin_frappe
+let url = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+let plug_file = expand('~/.vim/autoload/plug.vim')
+if filereadable(plug_file)
+    " If we have Plug, then ensure that all our plugins are installed.
+    autocmd VimEnter *
+                \     if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+                \   |   PlugInstall --sync | source $MYVIMRC
+                \   | endif
+elseif executable('curl')
+    let cmd = $'curl -fLo {plug_file} --create-dirs {url}'
+    silent call system(cmd)
+    if v:shell_error
+        echo 'Could not install Plug'
+    endif
+endif
 
-" vim-highlightedyank
-let g:highlightedyank_highlight_duration = 200
+" Setup Vim plugins and configure each of them with autocommands.
+" See https://junegunn.github.io/vim-plug/faq/
+call plug#begin()
 
-" Venter
-nnoremap <leader>v :VenterToggle<CR>
+Plug 'JMcKiern/vim-venter'
+    autocmd VimEnter * nnoremap <leader>v :VenterToggle<CR>
 
-" FZF
-nnoremap <leader>fg :GFiles<CR>
-nnoremap <leader>? :GFiles?<CR>
-nnoremap <leader>rg :Rg<CR>
+Plug 'airblade/vim-gitgutter'
 
-" Fugitive
-nnoremap <leader>gc :Git commit<CR>
-nnoremap <leader>gp :Git push<CR>
+Plug 'catppuccin/vim'
+    autocmd VimEnter * ++nested silent! colorscheme catppuccin_frappe
 
-" YouCompleteMe
-nnoremap <leader>jd :YcmCompleter GoTo<CR>
-
-" ALE
-let g:ale_fixers = { '*': ['remove_trailing_lines', 'trim_whitespace'] }
-let g:ale_fix_on_save = 1
-augroup ALE
-    au!
-    autocmd FileType ale-preview setlocal wrap
+Plug 'dense-analysis/ale', { 'do': ':silent! helptags ALL' }
+    autocmd FileType ale-preview,ale-info setlocal wrap
     autocmd FileType c let g:ale_c_clangtidy_extra_options='-clang-analyzer-security.insecureAPI.strcpy'
-    autocmd BufEnter *.tsv execute 'if has_key(g:ale_fixers, "*") | unlet g:ale_fixers["*"] | endif'
-augroup END
+    autocmd VimEnter * let g:ale_fixers = {
+                \     '*': ['remove_trailing_lines', 'trim_whitespace'],
+                \     'tsv' : []
+                \ }
+    autocmd VimEnter * let g:ale_fix_on_save = 1
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+    autocmd VimEnter * nnoremap <leader>fg :GFiles<CR>
+    autocmd VimEnter * nnoremap <leader>? :GFiles?<CR>
+    autocmd VimEnter * nnoremap <leader>rg :Rg<CR>
+
+Plug 'machakann/vim-highlightedyank'
+    autocmd VimEnter * let g:highlightedyank_highlight_duration = 200
+
+Plug 'tpope/vim-commentary'
+
+Plug 'tpope/vim-fugitive'
+    autocmd VimEnter * nnoremap <leader>gc :Git commit<CR>
+    autocmd VimEnter * nnoremap <leader>gp :Git push<CR>
+
+Plug 'tpope/vim-surround'
+
+" YouCompleteMe needs Python3 to install, so check if we have it before
+" installing.
+if executable('python3')
+    Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --all' }
+        autocmd VimEnter * nnoremap <leader>jd :YcmCompleter GoTo<CR>
+endif
+
+call plug#end()
