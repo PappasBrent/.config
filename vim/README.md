@@ -6,6 +6,8 @@
 
 ## Optional
 
+- Perl for vimtex
+- latexmk for vimtex
 - Python3 for YouCompleteMe
 
 ## Notes
