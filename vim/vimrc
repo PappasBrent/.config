@@ -75,6 +75,10 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-surround'
 
+if executable('perl') && executable('latexmk')
+    Plug 'lervag/vimtex'
+endif
+
 " YouCompleteMe needs Python3 to install, so check if we have it before
 " installing.
 if executable('python3')
