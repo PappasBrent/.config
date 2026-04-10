@@ -1,0 +1,47 @@
+################################################################################
+# INCLUDES
+################################################################################
+
+# Include the default inputrc file before potentially overwriting defaults.
+$include /etc/inputrc
+
+################################################################################
+# KEY BINDINGS
+################################################################################
+
+$if Bash
+    # Quote the current or previous word
+    "\C-xq": "\eb\"\ef\""
+    # Run ls
+    "\el": "ls"
+$endif
+
+################################################################################
+# VARIABLES
+################################################################################
+
+# Upon typing a closing bracket, hop to the matching open bracket for a second.
+set blink-matching-paren on
+
+# When auto-completing, ignore case.
+set completion-ignore-case on
+
+# When auto-completing, treat _ and - as the same.
+#
+# completion-ignore-case must be on as well for this setting to take effect.
+set completion-map-case on
+
+# When trying to auto-completing a word with multiple matches that share a
+# common prefix, show all options immediately instead of ringing the bell
+# first.
+set show-all-if-ambiguous on
+
+# When trying to auto-completing a word with multiple matches that do not share
+# a common prefix (e.g., when trying to complete an argument to a command
+# without having started to type that argument yet), show all options
+# immediately instead of ringing the bell first.
+set show-all-if-unmodified on
+
+# When auto-completing a word in the middle of a line where some of the
+# completions are already present, don't duplicate the remaining characters.
+set skip-completed-text on
