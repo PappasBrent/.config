@@ -30,6 +30,11 @@ augroup Git_Commit
     au FileType gitcommit setlocal spell tw=72
 augroup END
 
+augroup Go_Commands
+    au!
+    au FileType go nnoremap <localleader>m :write <bar> :!clear && go run %<CR>
+augroup END
+
 augroup MD_Commands
     au!
     if executable('prettier')
