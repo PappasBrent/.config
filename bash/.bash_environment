@@ -17,3 +17,8 @@ if [[ -d "$HOME/.gem/ruby/3.2.0/gems/" ]]; then
     export GEM_HOME="$HOME/.gem/ruby/3.2.0/gems/"
     export GEM_PATH="$HOME/.gem/ruby/3.2.0/gems/"
 fi
+
+# Add color to man pages.
+if [[ -f "$HOME/.config/bash/.color_man" ]]; then
+    source "$HOME/.config/bash/.color_man"
+fi
