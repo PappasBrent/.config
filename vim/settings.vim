@@ -35,6 +35,8 @@ set completeopt+=popup
 
 set nobackup
 
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+
 if ! has("nvim")
     set undofile
     let &undodir=expand("$HOME/.config/vim/undodir")

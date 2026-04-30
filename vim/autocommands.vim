@@ -12,7 +12,7 @@ augroup END
 
 augroup TSV_Commands
     au!
-    au BufEnter *.tsv setlocal list noexpandtab softtabstop=8 shiftwidth=8 listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
+    au BufEnter *.tsv setlocal list noexpandtab softtabstop=8 shiftwidth=8
 augroup END
 
 augroup Bash_Commands
