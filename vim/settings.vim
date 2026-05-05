@@ -37,7 +37,7 @@ set nobackup
 
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
-# Only insert one space after periods when wrapping text, not two.
+" Only insert one space after periods when wrapping text, not two.
 set nojoinspaces
 
 if ! has("nvim")
