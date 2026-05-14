@@ -6,7 +6,7 @@
 mkdir -p ~/.config
 cd ~/.config
 git init
-git remote add origin git@github.com:PappasBrent/.config.git
+git remote add origin https://www.github.com/PappasBrent/.config.git
 git pull origin main
 ```
 
