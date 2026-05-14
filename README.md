@@ -8,7 +8,7 @@ cd ~/.config
 git init
 git remote add origin git@github.com:PappasBrent/.config.git
 git remote -v
-git pull origin master
+git pull origin main
 ```
 
 <!-- TODO: Add a root setup.sh script that runs all other setup scripts. -->
