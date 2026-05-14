@@ -57,13 +57,18 @@ augroup Vim_Start
     " (happens when dropping a file on gvim), for a commit or rebase message
     " (likely a different one than last time), and when using xxd(1) to filter
     " and edit binary files (it transforms input files back and forth, causing
-    " them to have dual nature, so to speak). For commit messages, jump two
-    " lines down because that's where the title is in the commit template I use.
+    " them to have dual nature, so to speak).
     autocmd BufReadPost *
-                \ if &filetype == 'gitcommit' | execute "normal gg2j" | endif
-                \ | let line = line("'\"")
+                \ let line = line("'\"")
                 \ | if line >= 1 && line <= line("$") && &filetype !~# 'commit'
                 \      && index(['xxd', 'gitrebase'], &filetype) == -1
                 \ |   execute "normal! g`\"zz"
+                \ | endif
+
+    " For commit messages, jump two lines down because that's where the title
+    " is in the commit template I use.
+    autocmd BufEnter *
+                \ if &filetype == 'gitcommit' 
+                \ | execute "normal gg2j" 
                 \ | endif
 augroup END
