@@ -2,8 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-# If we are not running interactively, stop processing.
-if [[ ! "$-" =~ "i" ]]; then exit 0; fi
+# If we are not running interactively, stop processing. Use return to avoid
+# exiting the shell entirely, and instead just exit this script early.
+if [[ ! "$-" =~ "i" ]]; then return 0; fi
 
 # If we are in a non-login shell, then changes to environment variables were
 # not loaded. Apply them here.
