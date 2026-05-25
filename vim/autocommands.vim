@@ -18,6 +18,7 @@ augroup END
 augroup Bash_Commands
     au!
     au FileType sh nnoremap <localleader>m :write <bar> :!clear && ./%<CR>
+    au FileType sh nnoremap <localleader>rl :. write !bash<CR>
 augroup END
 
 augroup Python_Commands
@@ -40,6 +41,11 @@ augroup MD_Commands
     if executable('prettier')
         au FileType markdown nnoremap <localleader>t vip:!prettier --parser markdown<CR>
     endif
+augroup END
+
+augroup Vim_Commands
+    au!
+    au FileType vim nnoremap <localleader>rl :.so<CR>
 augroup END
 
 augroup Spelling
