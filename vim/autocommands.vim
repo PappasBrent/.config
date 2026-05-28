@@ -39,7 +39,7 @@ augroup END
 augroup MD_Commands
     au!
     if executable('prettier')
-        au FileType markdown nnoremap <localleader>t vip:!prettier --parser markdown<CR>
+        au FileType markdown nnoremap <localleader>t mtvip:!prettier --parser markdown<CR>`t
     endif
 augroup END
 
