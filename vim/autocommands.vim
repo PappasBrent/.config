@@ -41,6 +41,7 @@ augroup MD_Commands
     if executable('prettier')
         au FileType markdown nnoremap <localleader>t mtvip:!prettier --parser markdown<CR>`t
     endif
+    setlocal shiftwidth=2 softtabstop=2
 augroup END
 
 augroup Vim_Commands
