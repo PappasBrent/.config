@@ -28,6 +28,8 @@ set t_vb=
 " Enable seeing the search count and index in the bottom right.
 set shortmess-=S
 
+set incsearch
+
 set clipboard^=unnamedplus,unnamed
 
 " Show additional info about completions in a popup menu.
