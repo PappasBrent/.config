@@ -17,13 +17,13 @@ augroup END
 
 augroup Bash_Commands
     au!
-    au FileType sh nnoremap <localleader>m :write <bar> :!clear && ./%<CR>
+    au FileType sh nnoremap <localleader>m :write <bar> :!clear && bash %<CR>
     au FileType sh nnoremap <localleader>rl :. write !bash<CR>
 augroup END
 
 augroup Python_Commands
     au!
-    au FileType python nnoremap <localleader>m :write <bar> :!clear && ./%<CR>
+    au FileType python nnoremap <localleader>m :write <bar> :!clear && python3 %<CR>
 augroup END
 
 augroup Git_Commit
